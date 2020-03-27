@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>工业工程1172</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+</head>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			background:#FFFFFF;
+		}
+		.col-md-2{
+			background: #e6e2eb;
+			border: 2px solid #edeff2;
+			margin: 5px;
+			height: 40px;
+			line-height: 40px;
+		}
+		.choose{
+			background:white;
+			color:blueviolet;
+		}
+	</style>
+<body>
+<div class="container">
+	<div class="row">
+		<h2 class="col-md-12 text-center">工业1172</h2>
+	</div>
+	<div class="row box">
+		<span class="col-md-1"></span>
+		<div class="col-md-2 text-center">蔡楚键</div>
+		<div class="col-md-2 text-center">陈恒基</div>
+		<div class="col-md-2 text-center">陈雯慧</div>
+		<div class="col-md-2 text-center">陈展鹏</div>
+		<div class="col-md-2 text-center">邓裕琪</div>
+		<span class="col-md-1"></span>
+	</div>
+	
+	<div class="row box">
+		<span class="col-md-1"></span>
+		<div class="col-md-2 text-center">傅栢涛</div>
+		<div class="col-md-2 text-center">黄静怡</div>
+		<div class="col-md-2 text-center">黄淑怡</div>
+		<div class="col-md-2 text-center">黄伟鹏</div>
+		<div class="col-md-2 text-center">黄晓琪</div>
+		<span class="col-md-1"></span>
+	</div>
+	<div class="row box">
+		<span class="col-md-1"></span>
+		<div class="col-md-2 text-center">赖振兴</div>
+		<div class="col-md-2 text-center">劳正栋</div>
+		<div class="col-md-2 text-center">黎镇鸿</div>
+		<div class="col-md-2 text-center">黎子键</div>
+		<div class="col-md-2 text-center">李观睿</div>
+		<span class="col-md-1"></span>
+	</div>		
+	<div class="row box">
+		<span class="col-md-1"></span>
+		<div class="col-md-2 text-center">李华涛</div>
+		<div class="col-md-2 text-center">李擎宇</div>
+		<div class="col-md-2 text-center">李世盛</div>
+		<div class="col-md-2 text-center">梁镇文</div>
+		<div class="col-md-2 text-center">刘广彬</div>
+		<span class="col-md-1"></span>
+	</div>			
+	<div class="row box">
+		<span class="col-md-1"></span>
+		<div class="col-md-2 text-center">刘靖鑫</div>
+		<div class="col-md-2 text-center">刘荣新</div>
+		<div class="col-md-2 text-center">刘志佳</div>
+		<div class="col-md-2 text-center">陆卓凡</div>
+		<div class="col-md-2 text-center">吕卓霖</div>
+		<span class="col-md-1"></span>
+	</div>
+	<div class="row box">
+		<span class="col-md-1"></span>
+		<div class="col-md-2 text-center">潘烷诗</div>
+		<div class="col-md-2 text-center">唐建祥</div>
+		<div class="col-md-2 text-center">肖遥</div>
+		<div class="col-md-2 text-center">严允明</div>
+		<div class="col-md-2 text-center">张周玉</div>
+		<span class="col-md-1"></span>
+	</div>
+	<div class="row box">
+		<span class="col-md-1"></span>
+		<div class="col-md-2 text-center">郑嘉城</div>
+		<div class="col-md-2 text-center">郑礼杰</div>
+		<div class="col-md-2 text-center">郑名华</div>
+		<div class="col-md-2 text-center">郑威</div>
+		<div class="col-md-2 text-center">周建军</div>
+		<span class="col-md-1"></span>
+	</div>		
+	<div class="row">
+		<div class="col-md-4"></div>
+		<button class="btn btn-success col-md-4">开始</button>
+		<div class="col-md-4"></div>
+
+		
+	</div>
+		
+	
+</div>	
+	
+</body>
+</html>
+<script type="text/javascript">
+$(function() {
+    var j = 0;
+    $(document).on('selectstart', function() {
+        return false
+    })
+    var timer,
+        n = 0
+    $('.btn').on('click', function() {
+        if (j == 0) {
+            j = 1;
+            $(".btn").html("点名中");
+            timer = setInterval(function() {
+                n++
+
+                $('.box div').each(function(k, v) {
+
+                    $('.box div').eq(k).css({
+                        'background': color(),
+                        'color': color()
+                    })
+                })
+                console.log(n)
+                if (n >= 20) {
+
+                    clearInterval(timer)
+                    j = 0;
+                    $(".btn").html("开始点名");
+                    n = 0
+                    $('.box div').css({
+                        'background': '#e6e2eb',
+                        'color': 'black'
+                    })
+                    $('.box div').eq(name()).css({
+                        'background': 'red',
+                        'color': 'white'
+                    })
+                }
+            }, 100)
+        }
+
+
+
+
+    })
+
+    /*随机索引号，需要改的就直接改数字，多少人就改成多少个*/
+    function name() {
+        return Math.floor(Math.random() * 35)
+    }
+    /*随机的颜色封装函数*/
+    function color() {
+        var r = Math.floor(Math.random() * 256)
+        var g = Math.floor(Math.random() * 256)
+        var b = Math.floor(Math.random() * 256)
+        return 'rgb(' + r + ',' + g + ',' + b + ')'
+    }
+})
+</script>
